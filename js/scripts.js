@@ -29,7 +29,7 @@
   $('body').scrollspy({
     target: '#mainNav',
     offset: 155
-  });
+  });  
 
   // Collapse Navbar
   var navbarCollapse = function() {
@@ -60,4 +60,27 @@
     }
   });
 
-})(jQuery); // End of use strict
+})(jQuery);
+
+ if ($(window).width() < 720) {
+              $('.navbar-brand-img img').attr('src','assets/img/logo-dentalcao-menu.png');
+          } else {
+            $(function () { 
+            $(window).scroll(function () {  
+               if ($(this).scrollTop() > 100) { 
+                    $('.navbar-brand-img img').attr('src','assets/img/logo-dentalcao-menu.png');
+                }
+                if ($(this).scrollTop() < 100) { 
+                    $('.navbar-brand-img img').attr('src','assets/img/logo-dentalcao-white.png');
+                }
+              })
+            });
+          }
+
+          function on() {
+          document.getElementById("overlay").style.display = "block";
+        }
+
+        function off() {
+          document.getElementById("overlay").style.display = "none";
+        }
